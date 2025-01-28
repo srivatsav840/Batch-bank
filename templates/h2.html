@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room</title>
+    <style>
+        /* Global Styles */
+        body {
+            background-image: url("https://images.pexels.com/photos/2035406/pexels-photo-2035406.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load");
+            background-size: cover;
+            background-attachment: fixed;
+            backdrop-filter: blur(5px);
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Container for content */
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        /* Heading Styles */
+        h1 {
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        /* Paragraph Styles */
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Input and Button Styles */
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        /* Link Styles */
+        .link {
+            display: block;
+            margin-top: 20px;
+            color: #17a2b8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 8px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Room</h1>
+        <p>Creating a room is the first step towards managing your expenses efficiently. By creating a room, you can track all your shared expenses, split bills, and ensure transparency among roommates. Say goodbye to financial misunderstandings and enjoy a fair sharing system.</p>
+        <form method="POST" action="/createdb">
+            <input type="text" name="databasen" id="databasen" placeholder="Enter room name" required>
+            <button class="btn" type="submit">Create Room</button>
+        </form>
+        <a href="/" class="link">Already have a room? Enter here</a>
+        <!-- Dynamic messages can be displayed here -->
+        <div class="messages">
+            <div>{{cs1}}</div>
+            <div>{{cs2}}</div>
+            <div>{{cs3}}</div>
+            <div>{{es}}</div>
+        </div>
+    </div>
+</body>
+</html>

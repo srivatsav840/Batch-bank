@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing - Batch Bank</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Main Section */
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* Form Section */
+        .form-section {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* Form */
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button.sri {
+            padding: 15px;
+            font-size: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.sri:hover {
+            background-color: #555;
+        }
+
+        /* Links */
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .links a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 2px solid white;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 36px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            form {
+                gap: 15px;
+            }
+
+            input[type="text"],
+            input[type="date"] {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            button.sri {
+                font-size: 18px;
+                padding: 12px;
+            }
+
+            .links a {
+                padding: 8px 12px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 15px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            input[type="text"],
+            input[type="date"] {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            button.sri {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .links a {
+                display: block;
+                margin: 10px 0;
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Manage Your Expenses</h1>
+        <p>Effortlessly track your shared expenses and maintain transparency with your roommates.
+           Our platform simplifies bill splitting, making it easier for everyone to contribute their fair share.</p>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Form Section -->
+        <div class="form-section">
+            <form method="POST" action="/bill">
+                <input type="text" name="describe" id="describe" placeholder="Describe your expenses" required>
+                <input type="date" name="date" id="date" required>
+                <input type="text" name="amount" id="amount" placeholder="Enter amount" required>
+                <button class="sri" type="submit">Submit Expense</button>
+            </form>
+
+            <!-- Links to Other Pages -->
+            <div class="links">
+                <a href="/summary">View Expense History</a>
+                <a href="/spliting">Split Expenses</a>
+            </div>
+
+            <!-- Server-side Dynamic Content -->
+            {{ss}}
+            {{pop}}
+            {{pop2}}
+            {{succe}}
+        </div>
+    </main>
+</body>
+</html>

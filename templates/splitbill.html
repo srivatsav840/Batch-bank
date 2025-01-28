@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Splitting Bill</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Splitting Bill</h1>
+
+    <p>Average Amount: {{ average_expense }}</p>
+    <p>{{ p }}</p>
+
+    <h2>Transactions:</h2>
+    <h3>Debtor has to pay to Creditor</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Debtor</th>
+                <th>Creditor</th>
+                <th>Amount</th>
+                <th>UPI ID of Debtor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction[0] }}</td>
+                <td>{{ transaction[1] }}</td>
+                <td>{{ transaction[2] }}</td>
+                <td>{{ transaction[3] }}</td> <!-- Display UPI ID of the debtor -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Reset margin and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set the background with a gradient and center the content */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Create a card-like structure for the form */
+        .signup-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Style the heading */
+        .signup-container h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Style the input fields */
+        .signup-container input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            font-size: 1em;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Add a focus effect for input fields */
+        .signup-container input:focus {
+            border-color: #6a11cb;
+        }
+
+        /* Style the submit button */
+        .signup-container .sri {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background: #6a11cb;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        /* Add a hover effect for the submit button */
+        .signup-container .sri:hover {
+            background: #5a0fb0;
+        }
+
+        /* Style the link */
+        .signup-container a {
+            display: block;
+            margin-top: 20px;
+            color: #6a11cb;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        /* Add a hover effect for the link */
+        .signup-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 400px) {
+            .signup-container {
+                padding: 20px;
+            }
+
+            .signup-container h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Sign Up</h1>
+        <form method="POST" action="/sigup">
+            <input type="text" name="username" id="username" placeholder="Name" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="text" name="upi" id="upi" placeholder="Upi id" required>
+            <button class="sri" type="submit">Submit</button>
+            <a href="/login">Already have an account? Login</a>
+
+            {{ss}}
+            {{pop}}
+            {{pop1}}
+        </form>
+    </div>
+</body>
+</html>
