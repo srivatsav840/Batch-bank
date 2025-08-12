@@ -176,7 +176,7 @@ def enterbill():
                 session['lengthoftable'] = lenn
                 mycc.close()
                 mydbb.close()
-                sender_email = "deepakeppakayala008@gmail.com"
+                sender_email = "srivatsavbojja28@gmail.com"
                 password = "your_password"
                 message = MIMEMultipart()
                 message["From"] = sender_email
@@ -273,3 +273,4 @@ def split():
 
 if __name__ == "__main__":
     var1.run(host="0.0.0.0", port=5001, debug=True)
+
